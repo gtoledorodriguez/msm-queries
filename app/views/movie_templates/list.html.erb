@@ -10,7 +10,8 @@
     <th></th>
   </tr>
 
-  <% Movie.all.each do |a_movie| %>
+  <% @list_of_movies = Movie.all %>
+  <% @list_of_movies.order({:year => :desc, :title => :asc}).each do |a_movie| %>
 
     <tr>
       <td><%= a_movie.id %></td>
